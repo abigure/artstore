@@ -46,3 +46,18 @@ group :development do
   gem 'spring'
 end
 
+
+## 所有環境都綁，包含 production
+gem "pry-rails"
+gem "awesome_print", :require => false
+
+group :development, :test do # 也包含 test 是為了讓寫 test case 時也可以 debug
+  # gem "pry-plus"
+  gem "pry-byebug"
+  gem "hirb", :require => false
+  gem "hirb-unicode", :require => false
+end
+
+group :development do
+  gem "pry-remote"
+end
